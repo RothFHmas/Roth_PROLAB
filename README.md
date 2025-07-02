@@ -1,13 +1,13 @@
-Abgabe für PROLAB Christoph Roth
+## Abgabe für PROLAB Christoph Roth
 
-1. Launch
+## 1. Launch
 In den Catkin workspace navigieren und das paket mit der launch file starten
 ```bash
 cd catkin_ws
 roslaunch example_package start.launch
 ```
 
-2. Erklärung des Programms
+## 2. Erklärung des Programms
 Es werden 3 seperate Nodes im launchfile gestartet
   filter_node_KF
   filter_node_EKF
@@ -21,7 +21,7 @@ Eventuell muss die visualisierung der `PoseWithCovarianceStamped` vorher noch ak
 Es wird auch ein map server gestartet um die aufgezeichnete map in Rviz visualisieren zu können. Die map daten werden für die berechnung der prediciotns nicht verwendet.
 Allgemein für die berechnung aller predictions und corrections werden keine `/map` oder `/scan` danten verwendet. Es werden in miener implementierung nur `/odom` und `/imu` messwerte verwendet für die berechungen (keine positionsdaten aus `/odom`).
 
-3. Ergebnisse
+## 3. Ergebnisse
 Die ergebnissbilder sind im ordner `example_package/pictures | plots` und werden auch im dokumentations paper besprochen.
 
 Allgemein sind meine berechnungen orienteirt an den in den folien gezeigten algorythmen bzw dem buch Probabilistic Robotics von S. Thrun, W. Burgard, and D. Fox.
@@ -30,7 +30,7 @@ Trozt allem habe ich es nicht geschafft die kovarianzen richtig zu berechnen / v
 
 Der partikel filter funktioniert und im dynamic reconfigure können die 4 alpha werte angepasst werden. Das resampling hat ienen extra schritt der nicht unbedingt "richtig" ist, und zwar das einzelne partikel die weit weg von allen anderen partikeln sind eleminiert werden im resample schritt. Bei meiner implementation des PF werden beim updaten der weight nur `/odom` und `/imu` daten verwenden (keine positionsdaten aus `/odom`). Da keine `/map` und `/scan` daten verwendet werden ist das resampling nicht besonders effektiv und daher wächst die gesamt verteilung je weiter man sich mit dem roboter bewegt. Es werden 300 partikel verwendet diese anzahl kann im launchfile verändert werden.
 
-4. Commands um pose_plot_accumulate.py zu verwenden
+## 4. Commands um pose_plot_accumulate.py zu verwenden
 
 Achtung output pfad anpassen!!
 
