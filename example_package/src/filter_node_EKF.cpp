@@ -90,7 +90,7 @@ private:
         // H: Jacobi-Matrix der Messfunktion h(x)
         Eigen::MatrixXd H = Eigen::MatrixXd::Identity(6,6);
 
-        // Kalman-Gain
+        // Kalman-Gain             //Zeile 4
         Eigen::MatrixXd S = H * P_ * H.transpose() + R_;
         Eigen::MatrixXd K = P_ * H.transpose() * S.inverse();
 
@@ -99,10 +99,10 @@ private:
         // Winkel-Differenz normieren
         y(2) = atan2(sin(y(2)), cos(y(2)));
 
-        x_ = x_ + K * y;
-        P_ = (Eigen::MatrixXd::Identity(6,6) - K * H) * P_;
+        x_ = x_ + K * y;                                        //Zeile 5
+        P_ = (Eigen::MatrixXd::Identity(6,6) - K * H) * P_;     //Zeile 6
 
-        // ======= PUBLISH =======
+        // ======= PUBLISH =======                              //Zeile 7
         geometry_msgs::PoseWithCovarianceStamped pose_msg;
         pose_msg.header.stamp = current_time;
         pose_msg.header.frame_id = "map";
