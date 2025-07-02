@@ -2,9 +2,10 @@
 Dieses package erweitert das example_package das uns zur verfügung gestellt wurde um 3 filter nodes KF EKF und PF.
 
 ## 1. Launch
-In den Catkin workspace navigieren und das paket mit der launch file starten
+In den Catkin workspace navigieren und das paket mit `catkin_make` bauen und danach mit der launch file starten
 ```bash
 cd catkin_ws
+catkin_make
 roslaunch example_package start.launch
 ```
 
