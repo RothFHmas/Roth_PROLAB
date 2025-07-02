@@ -48,7 +48,7 @@ private:
         B(2,0) = dt * sin(theta);
         B(4,1) = dt;
 
-         // Prediction
+         // Prediction // Zeilen beziehen sich auf zeilen aus dem algorythmus für KF
         x_ = A * x_ + B * u;			    //Zeile 2
         P_ = A * P_ * A.transpose() + R_;	//Zeile 3
 
