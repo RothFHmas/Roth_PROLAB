@@ -1,5 +1,5 @@
 ## Abgabe für PROLAB Christoph Roth
-Dieses package werwitert das example_package das uns zur verfügung gestellt wurde um 3 filter nodes KF EKF und PF.
+Dieses package erweitert das example_package das uns zur verfügung gestellt wurde um 3 filter nodes KF EKF und PF.
 
 ## 1. Launch
 In den Catkin workspace navigieren und das paket mit der launch file starten
