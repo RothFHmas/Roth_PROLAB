@@ -1,4 +1,5 @@
 ## Abgabe für PROLAB Christoph Roth
+Dieses package werwitert das example_package das uns zur verfügung gestellt wurde um 3 filter nodes KF EKF und PF.
 
 ## 1. Launch
 In den Catkin workspace navigieren und das paket mit der launch file starten
@@ -20,6 +21,8 @@ Eventuell muss die visualisierung der `PoseWithCovarianceStamped` vorher noch ak
 
 Es wird auch ein map server gestartet um die aufgezeichnete map in Rviz visualisieren zu können. Die map daten werden für die berechnung der prediciotns nicht verwendet.
 Allgemein für die berechnung aller predictions und corrections werden keine `/map` oder `/scan` danten verwendet. Es werden in miener implementierung nur `/odom` und `/imu` messwerte verwendet für die berechungen (keine positionsdaten aus `/odom`).
+
+Um den Roboter zu bewegen wird XTerm verwendet um mit dem teleop den roboter command veleocities (linear und angular) zu übergeben. (Dies wurde aus dem example_package 1:1 übernommen)
 
 ## 3. Ergebnisse
 Die ergebnissbilder sind im ordner `example_package/pictures | plots` und werden auch im dokumentations paper besprochen.
