@@ -50,7 +50,7 @@ private:
         Eigen::Matrix<double, 2, 1> u;
         u << v, omega;
 
-        //EKF: PREDICTION 
+        //EKF: PREDICTION // Zeilen beziehen sich auf zeilen aus dem algorythmus für KF
         // g(x,u)
         Eigen::VectorXd x_pred = x_;
         x_pred(0) += dt * v * cos(theta);   // x
@@ -60,19 +60,10 @@ private:
         x_pred(4) = v * sin(theta);         // vy
         x_pred(5) = omega;                  // omega
 
-        // F: System-Jacobi von g(x,u)
+        // System-Jacobi von g(x,u)
         Eigen::MatrixXd G = Eigen::MatrixXd::Identity(6,6);
         G(0,2) = -dt * v * sin(theta);  // d(g1)/d(theta)
         G(1,2) = dt * v * cos(theta);   // d(g2)/d(theta)
-
-        // G: Steuer-Jacobi (optional, falls du B brauchst)
-        Eigen::MatrixXd F = Eigen::MatrixXd::Zero(6,2);
-        F(0,0) = dt * cos(theta);
-        F(1,0) = dt * sin(theta);
-        F(2,1) = dt;
-        F(3,0) = cos(theta);
-        F(4,0) = sin(theta);
-        F(5,1) = 1.0;
 
         x_ = x_pred;                        //Zeile 2
         P_ = G * P_ * G.transpose() + Q_;   //Zeile 3
