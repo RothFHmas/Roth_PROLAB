@@ -35,7 +35,7 @@ Der partikel filter funktioniert und im dynamic reconfigure können die 4 alpha 
 
 ## 4. Commands um pose_plot_accumulate.py zu verwenden
 
-Achtung output pfad anpassen!!
+Achtung output pfad `_save_dir` anpassen!!
 
 Für KF:
 ```bash
