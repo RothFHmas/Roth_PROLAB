@@ -1,0 +1,17 @@
+{
+    "files.associations": {
+        "bitset": "cpp",
+        "memory": "cpp",
+        "random": "cpp",
+        "optional": "cpp",
+        "core": "cpp",
+        "cmath": "cpp",
+        "complex": "cpp",
+        "functional": "cpp",
+        "deque": "cpp",
+        "list": "cpp",
+        "string": "cpp",
+        "vector": "cpp",
+        "dense": "cpp"
+    }
+}
