@@ -50,7 +50,7 @@ private:
         Eigen::Matrix<double, 2, 1> u;
         u << v, omega;
 
-        //EKF: PREDICTION // Zeilen beziehen sich auf zeilen aus dem algorythmus für KF
+        //EKF: PREDICTION // Zeilen beziehen sich auf zeilen aus dem algorythmus für EKF
         // g(x,u)
         Eigen::VectorXd x_pred = x_;
         x_pred(0) += dt * v * cos(theta);   // x
